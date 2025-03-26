@@ -10,6 +10,7 @@ TagManager:
   - plant
   - table
   - Foyer
+  - scene
   layers:
   - Default
   - TransparentFX
