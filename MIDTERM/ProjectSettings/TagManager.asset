@@ -11,6 +11,14 @@ TagManager:
   - table
   - Foyer
   - scene
+  - INV
+  - kitchen
+  - stairs
+  - dusty
+  - front
+  - panty
+  - back_kitchen
+  - g-room
   layers:
   - Default
   - TransparentFX
