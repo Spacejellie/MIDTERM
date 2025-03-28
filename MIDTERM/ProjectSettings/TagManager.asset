@@ -19,6 +19,9 @@ TagManager:
   - panty
   - back_kitchen
   - g-room
+  - 2FL
+  - back_front
+  - start
   layers:
   - Default
   - TransparentFX

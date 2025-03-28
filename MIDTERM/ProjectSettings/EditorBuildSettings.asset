@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Kitchen.unity
     guid: 1a15153e48768c640b228994b4b3525f
   - enabled: 1
+    path: Assets/Scenes/Pantry.unity
+    guid: b68b0845c60a75a46b17d0e7d5c6d308
+  - enabled: 1
     path: Assets/Scenes/2FL.unity
     guid: d6ad4ed8fc09206418e98a30c5fb26de
+  - enabled: 1
+    path: Assets/Scenes/Granny's Room.unity
+    guid: e4d73abec7b814c4183075375df7e819
   - enabled: 1
     path: Assets/Scenes/End.unity
     guid: b441be373a175db44a03a2aa5cfb202e

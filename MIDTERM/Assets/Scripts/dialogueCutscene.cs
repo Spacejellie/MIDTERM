@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DialogueManager : MonoBehaviour
+public class dialogueCutscene : MonoBehaviour
 {
-    //VARIABLES
 
     public TextMeshProUGUI dialogueDisplay;
     public string[] dialogue = new string[5];
@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogueDisplay.text = "";
                 currentIndex = 0;
+                SceneManager.LoadScene("Front Rooms"); // Load the scene named "anyKeyToStart" after the dialogue ends
             }
 
         }
