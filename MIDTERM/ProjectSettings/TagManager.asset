@@ -22,6 +22,8 @@ TagManager:
   - 2FL
   - back_front
   - start
+  - pantry
+  - back_2FL
   layers:
   - Default
   - TransparentFX

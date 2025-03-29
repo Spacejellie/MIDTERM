@@ -10,6 +10,8 @@ public class dialogueCutscene : MonoBehaviour
     public TextMeshProUGUI dialogueDisplay;
     public string[] dialogue = new string[5];
     public int currentIndex = 0;
+    public bool keyPressed = false; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,9 +34,20 @@ public class dialogueCutscene : MonoBehaviour
             {
                 dialogueDisplay.text = "";
                 currentIndex = 0;
-                SceneManager.LoadScene("Front Rooms"); // Load the scene named "anyKeyToStart" after the dialogue ends
-            }
+                keyPressed = true;
+                Debug.Log("Transitioning to Front Rooms");
+                StartCoroutine(WaitAndLoadScene(1f, "Front Rooms"));
 
+            }
         }
+    }
+
+    private IEnumerator WaitAndLoadScene(float waitTime, string sceneName)
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(waitTime);
+
+        // Load the specified scene
+        SceneManager.LoadScene(sceneName);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class anyKeyToStart : PlayerMovDic
+public class anyKeyToStart : MonoBehaviour
 {
     public bool keyPressed = false;
     public TextMeshProUGUI text;

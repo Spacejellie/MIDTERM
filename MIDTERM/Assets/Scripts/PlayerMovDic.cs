@@ -44,7 +44,6 @@ public class PlayerMovDic : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) player.transform.position += Vector3.left * speed;
         if (Input.GetKey(KeyCode.D)) player.transform.position += Vector3.right * speed;
 
-        // Scene transition when pressing "F" inside trigger
         if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.F))
         {
             if (SceneManager.GetActiveScene().buildIndex == 2)
@@ -56,8 +55,8 @@ public class PlayerMovDic : MonoBehaviour
                 SceneManager.LoadScene("2FL");
             }
         }
-    }
 
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("kitchen"))
@@ -71,7 +70,6 @@ public class PlayerMovDic : MonoBehaviour
         }
 
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("kitchen"))
@@ -84,7 +82,6 @@ public class PlayerMovDic : MonoBehaviour
             isPlayerInTrigger = false;
         }
     }
-
     public void DisplayInventory()
     {
         if (inventoryDisplay == null)
