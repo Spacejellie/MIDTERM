@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ITEMPrompt : MonoBehaviour 
+public class ITEMPrompt : ItemNameDic
 {
 
     public GameObject dialoguePrompt;
@@ -16,7 +16,7 @@ public class ITEMPrompt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerNear && Input.GetKey(KeyCode.F))
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.F))
         {
             Debug.Log("Looking at Item");
         }

@@ -9,12 +9,14 @@ public class ItemNameDic : MonoBehaviour
 
 {
     public string itemName; //Name of the item
-    public int itemNumber = 1; // Quatity of the Item (default is 1
+    public int itemNumber = 1; // Quantity of the Item (default is 1
     public int objectIndex; // Index used in the Dialogue Manager
     public PlayerMovDic myPlayer; //Reference to the player script
     public DialogueManager dialogueManager; // Reference to the dialogue system
     public GameObject pickUp; // UI indicator (e,g, "Press F to pick up")
     private bool isPlayerNear = false;
+    public string[] itemDialogue; // Drag in specific dialogue for this item in the Inspector
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +30,13 @@ public class ItemNameDic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerNear && Input.GetKey(KeyCode.E))// If player presses "E"
+        if (isPlayerNear && Input.GetKeyDown(KeyCode.E))// If player presses "E"
         {
             Interact(); //Update dialogue manager
             AddItem(); // Add item to the inventory
             pickUp.SetActive(false); //Hide pickup prompt
             Destroy(gameObject); // Remove item from the world
-            isPlayerNear = true;
+            isPlayerNear = false;
             Debug.Log(" Pick Up Key");
         }
 
@@ -50,7 +52,7 @@ public class ItemNameDic : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNear =true;
-            pickUp.SetActive(true);
+            if (pickUp != null) pickUp.SetActive(true); // Show the pickup prompt
         }
     }
 
@@ -59,7 +61,7 @@ public class ItemNameDic : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerNear =false;
-            pickUp.SetActive(false);
+            if (pickUp != null) pickUp.SetActive(false); // Hide the pickup prompt
         }
     }
 
@@ -90,6 +92,6 @@ public class ItemNameDic : MonoBehaviour
 
     public void Interact() //Updates Dialogue System
     {
-        dialogueManager.currentIndex = objectIndex;
+        dialogueManager.StartDialogue(itemDialogue);
     }
 }

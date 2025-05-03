@@ -33,7 +33,6 @@ public class dialogueCutscene : MonoBehaviour
             else
             {
                 dialogueDisplay.text = "";
-                currentIndex = 0;
                 keyPressed = true;
                 Debug.Log("Transitioning to Front Rooms");
                 StartCoroutine(WaitAndLoadScene(1f, "Front Rooms"));
